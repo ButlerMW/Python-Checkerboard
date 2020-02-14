@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkerboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='checkerboard_style.css')}}">
+</head>
+<body>
+    <table>
+    {% for i in range(x): %}
+        <tr>
+            {% for j in range(y): %}
+                {% if (i+j)%2 == 0 %}
+                    <td class="color{{ (i+j)%2 }}" style="background-color: {{ color0 }}"</td>
+                {% else %}
+                    <td class="color{{ (i+j)%2 }}" style="background-color: {{ color1 }}"</td>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}     
+    </table>
+</body>
+</html>
